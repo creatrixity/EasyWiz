@@ -9,18 +9,18 @@
 | you a convenient way to create models for testing and seeding your
 | database. Just tell the factory how a default model should look.
 |
-*/
+ */
 
-$factory->define(Framework\User::class, function (Faker\Generator $faker) {
+$factory->define('User namespace here', function (Faker\Generator $faker) {
+    /**
+     * @var string
+     */
     static $password;
 
     return [
-        'name' => $faker->name,
-        'display_name' => $faker->name,
-        'photo' => '',
-        'birth_year' => 1999,
-        'email' => $faker->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
+        'name'           => $faker->name,
+        'email'          => $faker->safeEmail,
+        'password'       => $password ?: $password = bcrypt('secret'),
+        'remember_token' => str_random(10)
     ];
 });

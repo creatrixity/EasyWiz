@@ -16,9 +16,9 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('team_id');
-            $table->integer('competition_id');
-            $table->integer('leaderboard_id');
+            $table->integer('team_id')->nullable();
+            $table->integer('competition_id')->nullable();
+            $table->integer('leaderboard_id')->nullable();
             $table->boolean('is_subscribed')->default(0);
             $table->timestamps();
             $table->softDeletes();

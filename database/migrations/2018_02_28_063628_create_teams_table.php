@@ -17,7 +17,7 @@ class CreateTeamsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('alias');
-            $table->string('artwork');
+            $table->string('artwork')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
