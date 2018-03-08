@@ -4,10 +4,9 @@ namespace App\Services\Api\Http\Controllers;
 use Illuminate\Http\Request;
 use Lucid\Foundation\Http\Controller;
 
-use App\Services\Api\Features\ListUsersFeature;
-use App\Services\Api\Features\UpdateUserFeature;
+use App\Services\Api\Features\CreateCompetitionFeature;
 
-class UserController extends Controller
+class CompetitionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return $this->serve(ListUsersFeature::class);
+        //
     }
 
     /**
@@ -37,7 +36,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $this->serve(CreateCompetitionFeature::class);
     }
 
     /**
@@ -71,9 +70,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $this->serve(UpdateUserFeature::class, [
-            'id' => $id
-        ]);
+        //
     }
 
     /**

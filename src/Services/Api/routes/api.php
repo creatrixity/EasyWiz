@@ -19,8 +19,25 @@ Route::group(['prefix' => 'api'], function() {
 
         // The controllers live in src/Services/Api/Http/Controllers
 
-        Route::get('/users', 'UserController@index');
+        Route::get('/users', 'UserController@index')
+            ->name('users');
 
+        Route::put('/users/{id}', 'UserController@update')
+            ->where('id', '[0-9]+')
+            ->name('user');
+
+        Route::put('/profiles/{id}', 'ProfileController@update')
+            ->where('id', '[0-9]+')
+            ->name('profile');
+
+        Route::post('/teams', 'TeamController@store')
+            ->name('teams');
+
+        Route::post('/competitions', 'CompetitionController@store')
+            ->name('competitions');
+
+        Route::post('/leaderboards', 'LeaderboardController@store')
+            ->name('leaderboards');
     });
 
 });
