@@ -1,0 +1,15 @@
+.form-control {
+    box-shadow: none;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.form-group .form-control + .hint {
+    display: none;
+}
+
+.form-group .form-control:focus + .hint {
+    display: block;
+}

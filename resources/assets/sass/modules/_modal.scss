@@ -1,0 +1,11 @@
+$modal-body-height: 650px;
+$modal-header-opacity: 0.5;
+
+.modal-header .close {
+    opacity: $modal-header-opacity;
+}
+
+.modal-body {
+    max-height: $modal-body-height;
+    overflow-y: auto;
+}

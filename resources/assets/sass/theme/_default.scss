@@ -1,0 +1,66 @@
+.modal-header {
+    background: $w-top-bar-color;
+    color: white;
+}
+
+.modal-header .close {
+    color: white;
+}
+
+.w-top-bar {
+    background: $w-top-bar-color;
+    color: white;
+    font-weight: 100;
+
+    &__subtitle {
+        color: $gray-lightest;
+    }
+}
+
+.w-tab {
+
+    &__item {
+
+        &--active {
+
+            .tw-tab__button {
+                background: $brand-primary;
+                color: white;
+            }
+        }
+    }
+
+    &__button {
+        background: $gray-lightest;
+        color: $gray-dark;
+
+        &:hover {
+            color: white;
+            background: darken($brand-primary, 10%);
+        }
+    }
+}
+
+.w-competitor {
+    background: $gray-lightest;
+    border-color: $gray-lightest;
+
+    &:hover,
+    &:focus {
+        border-color: $gray-lighter;
+    }
+
+    &--selected {
+        background: $gray-lighter;
+        border-color: $gray-light;
+    }
+
+    &__title {
+        font-weight: bold;
+    }
+
+}
+
+.panel.panel-default .panel-heading {
+    background: white;
+}

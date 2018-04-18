@@ -1,0 +1,52 @@
+$spacing-md: 15px;
+
+$wizard-title-letter-spacing: 1.1px;
+$wizard-tab-button-padding: $spacing-md 0;
+$wizard-competitor-padding: $spacing-md;
+$wizard-competitor-border-radius: $spacing-md;
+$wizard-competitor-border-width: 3px;
+$wizard-competitor-artwork-width: 70px;
+
+.w-top-bar__title {
+    letter-spacing: $wizard-title-letter-spacing;
+}
+
+.w-tab {
+    list-style: none;
+    padding: 0;
+    display: block;
+
+    &__item {
+        width: 50%;
+        display: inline-block;
+        float: left;
+    }
+
+    &__button {
+        width: 100%;
+        display: block;
+        padding: $wizard-tab-button-padding;
+
+        &:hover {
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.w-competitor {
+    padding: $wizard-competitor-padding;
+    border-radius: $wizard-competitor-border-radius;
+    border: $wizard-competitor-border-width solid;
+
+    &:hover,
+    &:focus {
+        border: $wizard-competitor-border-width solid;
+        cursor: pointer;
+    }
+
+    &__artwork {
+        width: $wizard-competitor-artwork-width;
+        margin-bottom: $spacing-md;
+    }
+}

@@ -1,0 +1,169 @@
+$wizard-color-neutral: #eee !default;
+$wizard-color-active: darken($peter-river, 10%) !default;
+$wizard-color-complete: darken($peter-river, 13.5%) !default;
+$wizard-color-last: lighten($cleopatra, 1%) !default;
+
+$wizard-step-width-height: 64px !default;
+$wizard-step-font-size: 24px !default;
+
+.step-wrapper {
+    padding: 20px 0;
+}
+
+.step-indicator
+{
+    border-collapse: separate;
+    display: table;
+    position: relative;
+    table-layout: fixed;
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px 0 0 0;
+    margin: 40px 5px 60px 0;
+
+    &__item
+    {
+        display: table-cell;
+        position: relative;
+        float: none;
+        padding: 0;
+        width: 1%;
+
+        &:after
+        {
+            content: '';
+            background-color: $wizard-color-neutral;
+            display: block;
+            height: 5px;
+            position: absolute;
+            width: 100%;
+            left: 50%;
+            top: $wizard-step-width-height / 2;
+        }
+
+        &:last-child::after
+        {
+            display: none;
+        }
+
+        &.active
+        {
+            .step-indicator__step
+            {
+                border-color: $wizard-color-active;
+                color: #fff;
+                background-color: $wizard-color-active;
+
+                &:hover
+                {
+                    color: #fff;
+                }
+            }
+
+            .step-indicator__caption
+            {
+                color: #fff;
+            }
+
+            &.last
+            {
+                .step-indicator__step
+                {
+                    background-color: $wizard-color-last;
+                    border-color: $wizard-color-last;
+                }
+
+                .step-indicator__caption
+                {
+                    color: #fff;
+                }
+
+            }
+
+        }
+
+        &:after
+        {
+            background-color: $wizard-color-neutral;
+        }
+
+
+        &.complete
+        {
+            &:after
+            {
+                background-color: $wizard-color-complete;
+            }
+
+            .step-indicator__step
+            {
+                border-color: $wizard-color-complete;
+                background: $wizard-color-complete;
+                color: #fff;
+
+                &:hover
+                {
+                    // border-color: $wizard-color-complete;
+                    // color: $wizard-color-complete;
+
+                    // &+.step-indicator__caption
+                    // {
+                    //     color: $wizard-color-complete;
+                    // }
+
+                }
+            }
+
+            .step-indicator__caption
+            {
+                color: #ccc;
+            }
+        }
+    }
+
+    .step-indicator__step
+    {
+        background: $w-top-bar-color;
+        border-radius: 50%;
+        border: 1px solid $wizard-color-neutral;
+        width: $wizard-step-width-height;
+        height: $wizard-step-width-height;
+        line-height: $wizard-step-width-height;
+        margin: 0 auto;
+        font-size: 1.4em;
+        color: $wizard-color-neutral;
+        position: relative;
+        transition: transform 0.5s ease-in,
+                    border 0.5s ease;
+        z-index: 2;
+
+        &:hover
+        {
+            cursor: pointer;
+            transform: scale(1.09);
+            border-color: $wizard-color-active;
+            background: $wizard-color-active;
+            color: #fff;
+
+            &+.step-indicator__caption
+            {
+                color: #fff;
+            }
+        }
+    }
+
+    .step-indicator__caption
+    {
+        padding: 15px 16px;
+        letter-spacing: 1.1px;
+        text-align: center;
+        font-size: 1.2em;
+        display: block;
+        color: $wizard-color-neutral;
+    }
+}
+
+.step-wrapper
+{
+    padding: 25px 0;
+}

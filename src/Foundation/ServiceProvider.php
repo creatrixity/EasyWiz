@@ -22,6 +22,8 @@ class ServiceProvider extends BaseServiceProvider
     {
         // Register the service providers of your Services here.
         $this->app->register('App\Services\Api\Providers\ApiServiceProvider');
+        
+        $this->app->register('App\Services\Web\Providers\WebServiceProvider');
 
         // Bind repository contracts to implementations here.
         $this->app->bind(UserRepositoryInterface::class, function () {

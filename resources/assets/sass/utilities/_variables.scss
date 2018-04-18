@@ -1,0 +1,89 @@
+//== Colors
+//
+//## Grays for use across Easywiz.
+
+$gray-base:              #000;
+$gray-darkest:           lighten($gray-base, 6%);
+$gray-darker:            lighten($gray-base, 16%);
+$gray-dark:              lighten($gray-base, 26%);
+$gray:                   lighten($gray-base, 46%);
+$gray-light:             lighten($gray-base, 64%);
+$gray-lighter:           lighten($gray-base, 81%);
+$gray-lightest:          lighten($gray-base, 97%);
+
+//
+//## Brand colors for Easywiz.
+
+$evergreen:              #36ba45;
+$ripley:                 #eb4e4e;
+$cleopatra:              #4ea7eb;
+$peter-river:            #00a0da;
+
+$brand-primary:          $evergreen;
+
+$w-top-bar-color:       $brand-primary;
+
+//== Forms
+//
+// //** Border color for inputs on focus
+
+$input-border-focus:     $brand-primary;
+
+//== Typography
+//
+
+$font-family-sans-serif:  "Roboto", Helvetica, Arial, sans-serif !default;
+$font-family-serif:  "Cormorant Garamond", Baskerville, Georgia, serif !default;
+
+$brand-font-family: $font-family-sans-serif;
+
+$font-size-base:          14px;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:            (44px / $font-size-base) * 1rem; // ~36px
+$font-size-h2:            (32px / $font-size-base) * 1rem; // ~30px
+$font-size-h3:            (24px / $font-size-base) * 1rem; // ~24px
+$font-size-h4:            (17px / $font-size-base) * 1rem;
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.9 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    inherit !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.618 !default;
+$headings-color:          inherit !default;
+
+//== Layout
+//
+//## Layout variables for use
+
+$spacing-xs: 5px;
+$spacing-sm: 15px;
+$spacing-md: 30px;
+
+//== Forms
+//
+//##
+
+//** Text color for `<input>`s
+$input-color:                    $gray-dark;
+//** `<input>` border color
+$input-border:                   $gray-lighter;
+
+// TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
+//** Default `.form-control` border radius
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+$input-border-radius:            3px;
+// //** Large `.form-control` border radius
+// $input-border-radius-large:      $border-radius-large !default;
+// //** Small `.form-control` border radius
+// $input-border-radius-small:      $border-radius-small !default;
+
+// //** Border color for inputs on focus
+$input-border-focus:             $brand-primary;

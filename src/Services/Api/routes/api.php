@@ -15,7 +15,7 @@
 Route::group(['prefix' => 'api'], function() {
 
     // Prefix: /v1
-    Route::group(['prefix' => 'v1'], function() {
+    Route::group(['prefix' => 'v1', 'middleware' => ['auth:api']], function() {
 
         // The controllers live in src/Services/Api/Http/Controllers
 
@@ -24,6 +24,7 @@ Route::group(['prefix' => 'api'], function() {
 
         Route::put('/users/{id}', 'UserController@update')
             ->where('id', '[0-9]+')
+            // ->middleware('can:update, Framework\User')
             ->name('user');
 
         Route::put('/profiles/{id}', 'ProfileController@update')
@@ -32,6 +33,9 @@ Route::group(['prefix' => 'api'], function() {
 
         Route::post('/teams', 'TeamController@store')
             ->name('teams');
+
+        Route::get('/competitions', 'CompetitionController@index')
+            ->name('competitions');
 
         Route::post('/competitions', 'CompetitionController@store')
             ->name('competitions');

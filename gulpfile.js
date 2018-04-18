@@ -1,6 +1,16 @@
 const elixir = require('laravel-elixir');
 
-require('laravel-elixir-vue');
+const BrowserSync = require('laravel-elixir-browsersync');
+
+const projectConfig = {
+    serverAddress: '127.0.0.1:8000',
+    sassEntry: 'easywiz.scss',
+    jsEntry: 'app.js'
+};
+
+require('laravel-elixir-vue-2');
+
+elixir.config.assetsPath = 'resources/assets';
 
 /*
  |--------------------------------------------------------------------------
@@ -14,6 +24,8 @@ require('laravel-elixir-vue');
  */
 
 elixir(mix => {
-    mix.sass('app.scss')
-       .webpack('app.js');
+    mix.webpack(projectConfig.jsEntry)
+   .browserSync({
+       proxy: projectConfig.serverAddress,
+   });
 });

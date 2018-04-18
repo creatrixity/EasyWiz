@@ -1,0 +1,55 @@
+// /* ==========================================================================
+//    EASYWIZ.SCSS
+//    ========================================================================== */
+//
+// /*
+//  * easywiz.scss, by @creatrixity
+//  *
+//  * https://github.com/creatrixity | easywiz
+//  */
+//
+// /*
+//  *
+//  *  Getting Started
+//  *  ---------------
+//  *
+//  *  This is the master for all styles required for the EasyWiz Wizard. Sub-modules will be handled in their own
+//  *  own master files.
+//  *
+//  *
+//  *  Table Of Contents
+//  *  -----------------
+//  *
+//  *  1. UTILITIES
+//  *      Variables...........Framework-level specifications.
+//  *      Helpers...........Helper styles and placeholders.
+//  *
+//  *  2. VENDOR DEPENDENCIES
+//  * 
+//  *  3. MODULES
+//  *      Modal...............Modal styles.
+//  *      Step..............Wizard step styles abstracted for composability
+//  *      Panel............Simple panels can be extended for specific use cases.
+//  *      Input............Form control styling.
+//  *
+//  *  4. THEME
+//  *      Default...............Cosmetic styling: colors, backgrounds, gradients.
+//  *
+//  */
+
+// UTILITIES
+@import 'utilities/variables',
+        'utilities/helpers';
+
+// VENDOR DEPENDENCIES
+@import '~bootstrap-sass';
+
+// MODULES
+@import 'modules/modal',
+        'modules/steps',
+        'modules/panel',
+		'modules/input';
+
+
+// THEME
+@import 'theme/default';

@@ -2,17 +2,29 @@
   "private": true,
   "scripts": {
     "prod": "gulp --production",
-    "dev": "gulp watch"
+    "dev": "gulp watch",
+    "start": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js --output-style compressed --watch resources/assets/sass --output public/css"
   },
   "devDependencies": {
-    "bootstrap-sass": "^3.3.7",
-    "gulp": "^3.9.1",
-    "jquery": "^3.1.0",
-    "laravel-elixir": "^6.0.0-9",
-    "laravel-elixir-vue": "^0.1.4",
-    "laravel-elixir-webpack-official": "^1.0.2",
-    "lodash": "^4.14.0",
-    "vue": "^1.0.26",
-    "vue-resource": "^0.9.3"
-  }
+      "gulp": "^3.9.1",
+      "http-server": "^0.9.0",
+      "laravel-elixir": "^6.0.0-9",
+      "laravel-elixir-browsersync": "^0.1.5",
+      "laravel-elixir-browsersync-official": "^1.0.0",
+      "laravel-elixir-vue-2": "^0.2.0",
+      "laravel-elixir-vueify": "^1.0.2",
+      "laravel-elixir-webpack-official": "^1.0.2",
+      "lodash": "^4.14.0",
+      "vue": "^2.0.1",
+      "vue-resource": "^1.0.3"
+    },
+    "dependencies": {
+      "bootstrap-sass": "^3.3.7",
+      "jquery": "^3.1.0",
+      "normalizr": "^3.2.3",
+      "vee-validate": "next",
+      "vue-router": "^2.7.0",
+      "vuex": "^2.3.1",
+      "vuex-router-sync": "^4.2.0"
+    }
 }
